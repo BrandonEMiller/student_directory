@@ -6,6 +6,8 @@ body {
 
 .container {
     display: inline-block;
+    width: 800px;
+    margin: 0 auto;
 }
 
 
@@ -26,7 +28,32 @@ body {
  height: 50px;
 
   background-size: cover;
-    background-repeat: no-repeat;
+background-repeat: no-repeat;
     background-position: 50% 50%;
-    display: inline-block;
+    display: inline;
+}
+
+
+.thumbnail-container {
+    border: 1px solid black;
+    width: 150px;
+
+    border-radius: 5px;
+    margin: 10px auto;
+    float: left;
+    margin-right: 10px;
+}
+
+.thumbnail-container p {
+    text-align: center;
+}
+
+
+.thumbnailImage {
+     max-width: 150px;
+ height: 150px;
+
+  background-size: cover;
+background-repeat: no-repeat;
+    background-position: 50% 50%;
 }

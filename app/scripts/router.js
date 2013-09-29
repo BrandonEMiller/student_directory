@@ -12,7 +12,6 @@ StudentRouter = Backbone.Router.extend({
 
 
 	showStudents: function() {
-		console.log("gonna show all the items")
 		$('.container').html('')
 		this.students = new StudentCollection()
 		this.students.add( data )

@@ -1,6 +1,6 @@
 Student = Backbone.Model.extend({
 	initialize: function(){
-		console.log("New Item Created!")
+
 	}
 })
 
@@ -8,7 +8,6 @@ StudentCollection = Backbone.Collection.extend({
 	model: Student, 
 
 	initialize: function() {
-		console.log("New collection created!")
 
 		this.on('add', function (student){
 			//$('.gridImage').css('background-image',"url(" +student.get('image')+ ")");
@@ -22,7 +21,6 @@ ThumbnailCollection = Backbone.Collection.extend({
 	model: Student, 
 
 	initialize: function() {
-		console.log("New collection created!")
 
 		this.on('add', function (student){
 			//$('.gridImage').css('background-image',"url(" +student.get('image')+ ")");
