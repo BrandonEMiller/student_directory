@@ -4,6 +4,7 @@ GridStudentView = Backbone.View.extend({
 
 	events: {
 		"click .delete": "remove"
+		
 	},
 
 	className: 'student-grid-unit',

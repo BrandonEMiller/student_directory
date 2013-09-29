@@ -19,17 +19,19 @@
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
 
-        <div class="container">
-
-            <h1>Iron Yard Student Directory</h1>
+        <h1>Iron Yard Student Directory</h1>
             <a href="#/thumbnails">Thumbnails</a>
             <a href="#/students">Students</a>
 
+
+        <div class="container">
+
+            
         </div>
 
         <script type="text/template" id="grid-template">
            
-            <%=  '<div class="gridImageContainer"><image class= gridImage src=' + student.get('image') + ' </image></div>' +'<h2>'+ student.get('name') + '</h2>          <h2>' + student.get('email') + '</h2>          <h2>'+ student.get('github') + '</h2><button class="delete">Delete</button>'%>
+            <%=  '<div class="gridImageContainer"><image class= gridImage src=' + student.get('image') + ' </image></div>' +'<h2>'+ student.get('name') + '</h2>          <h2>' + student.get('email') + '</h2><h2>' + student.get('phone') + '</h2>' + '<button class="delete">Delete</button>'%>
     
             
         </script> 
