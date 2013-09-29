@@ -1,28 +1,27 @@
 StudentRouter = Backbone.Router.extend({
 
 	initialize: function(){
-		this.items = new StudentCollection()
-		this.items.add( data )
+		this.students = new StudentCollection()
+		this.students.add( data )
 	},
 
 	routes: {
 		"students"		: "showStudents",
-		"students/:id"	: "showStudent"
+		"thumbnails"	: "showThumbnails"
 	},
 
 
 	showStudents: function() {
 		console.log("gonna show all the items")
 		$('.container').html('')
-		this.items = new ItemsCollection()
-		this.items.add( data )
+		this.students = new StudentCollection()
+		this.students.add( data )
 	},
 
-	showStudent: function(id) {
-		console.log("we should show an item with the id ", id)
+	showThumbnails: function() {
 		$('.container').html('')
-		var itemToShow = this.items.get(id)
-		new FullItemView({model: itemToShow})
+		this.students = new ThumbnailCollection()
+		this.students.add( data )
 	}
 })
 

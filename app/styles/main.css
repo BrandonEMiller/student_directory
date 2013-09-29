@@ -8,6 +8,25 @@ body {
     display: inline-block;
 }
 
-.student-grid-unit {
-   
+
+.student-grid-unit h2{
+   display: inline-block;
+   margin-right: 10px;
+}
+
+.gridImageContainer {
+  width: 50px;
+  height: 50px;
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.gridImage{
+  max-width: 50px;
+ height: 50px;
+
+  background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    display: inline-block;
 }
