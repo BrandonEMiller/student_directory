@@ -2,7 +2,11 @@ StudentRouter = Backbone.Router.extend({
 
 	initialize: function(){
 		this.students = new StudentCollection()
-		this.students.add( data )
+		var that = this
+		$.get('http://0.0.0.0:3000/collections/students', function(data){
+			that.students.add(data)
+		})
+		
 	},
 
 	routes: {
@@ -12,9 +16,12 @@ StudentRouter = Backbone.Router.extend({
 
 
 	showStudents: function() {
-		$('.container').html('')
-		this.students = new StudentCollection()
-		this.students.add( data )
+		 $('.container').html('')
+		 this.students = new StudentCollection()
+		 var that = this
+		 $.get('http://0.0.0.0:3000/collections/students', function(data){
+			that.students.add(data)
+		})
 	},
 
 	showThumbnails: function() {
