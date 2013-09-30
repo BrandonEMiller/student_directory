@@ -10,7 +10,7 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width">
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-        <link rel="stylesheet" href="styles/00dbfbe7.main.css">
+        <link rel="stylesheet" href="styles/ef7d6fc7.main.css">
     </head>
     <body>
         <!--[if lt IE 10]>
@@ -18,9 +18,11 @@
         <![endif]-->
 
         <h1>Iron Yard Student Directory</h1>
+
+        <div class="links">
             <a href="#/thumbnails">Thumbnails</a>
             <a href="#/students">Students</a>
-
+        </div>
 
         <div class="container">
 
@@ -29,7 +31,7 @@
 
         <script type="text/template" id="grid-template">
            
-            <%=  '<div class="gridImageContainer"><image class= gridImage src=' + student.get('image') + ' </image></div>' +'<h2>'+ student.get('name') + '</h2>          <h2>' + student.get('email') + '</h2><h2>' + student.get('phone') + '</h2>' + '<button class="delete">Delete</button>'%>
+            <%=  '<div class="gridImageContainer"><image class= gridImage src=' + student.get('image') + ' </image></div>' +'<h2>'+ student.get('name') + '</h2>          <h2>' + student.get('email') + '</h2><h2>' + student.get('phone') + '</h2>' + '<button class="delete">Delete</button><button class="edit">Edit</button>'%>
     
             
         </script> 
@@ -49,7 +51,7 @@
             ga('create','UA-XXXXX-X');ga('send','pageview');
         </script>
 
-        <script src="scripts/e6d985d3.main.js"></script>
+        <script src="scripts/c827e282.main.js"></script>
 
         <script src="scripts/d5d180ab.coffee.js"></script>
 </body>
