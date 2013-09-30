@@ -3,7 +3,7 @@ GridStudentView = Backbone.View.extend({
 	template: _.template(  $('#grid-template').text() ),
 
 	events: {
-		"click .delete": "remove",
+		"click .delete": "destroy",
 		"click .edit": "edit",
 		"click .save": "save"
 
@@ -23,6 +23,12 @@ GridStudentView = Backbone.View.extend({
 		this.$el.append(this.template({student: this.model}))
 	},
 
+	destroy: function() {
+		console.log(this.model.get('_id'))
+		this.remove()
+		$.ajax({type:'DELETE', url:'http://0.0.0.0:3000/collections/students/'+ this.model.get('_id')})
+	},
+
 	edit: function() {
 		$(this.el).html('<input class="input_name" value="' + this.model.get('name') + '"/><input class="input_email" value="' + this.model.get('email') + '"/><input class="input_phone" value="' + this.model.get('phone') + '"/> <button class="save">Save</button>')
 		console.log ("You clicked edit")
@@ -34,6 +40,9 @@ GridStudentView = Backbone.View.extend({
 		this.model.set("name", $('.input_name').val())
 		this.model.set("email", $('.input_email').val())
 		this.model.set("phone", $('.input_phone').val())
+		$.ajax({type:'PUT', url:'http://0.0.0.0:3000/collections/students/'+ this.model.get('_id'), data: {name: this.model.get('name')}})
+		$.ajax({type:'PUT', url:'http://0.0.0.0:3000/collections/students/'+ this.model.get('_id'), data: {email: this.model.get('email')}})
+		$.ajax({type:'PUT', url:'http://0.0.0.0:3000/collections/students/'+ this.model.get('_id'), data: {name: this.model.get('phone')}})
 		$(this.el).html('<div class="gridImageContainer"><image class= gridImage src=' + this.model.get('image') + ' </image></div>' +'<h2>'+ this.model.get('name') + '</h2><h2>' + this.model.get('email') + '</h2><h2>' + this.model.get('phone') + '</h2>' + '<button class="delete">Delete</button><button class="edit">Edit</button>')
 
 	}

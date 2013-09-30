@@ -26,8 +26,11 @@ StudentRouter = Backbone.Router.extend({
 
 	showThumbnails: function() {
 		$('.container').html('')
+		var that = this
 		this.thumbnails = new ThumbnailCollection()
-		this.thumbnails.add( data )
+		 $.get('http://0.0.0.0:3000/collections/students', function(data){
+			that.thumbnails.add(data)
+		})
 	}
 })
 
