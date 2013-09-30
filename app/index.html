@@ -20,9 +20,11 @@
         <![endif]-->
 
         <h1>Iron Yard Student Directory</h1>
+
+        <div class="links">
             <a href="#/thumbnails">Thumbnails</a>
             <a href="#/students">Students</a>
-
+        </div>
 
         <div class="container">
 
@@ -31,7 +33,7 @@
 
         <script type="text/template" id="grid-template">
            
-            <%=  '<div class="gridImageContainer"><image class= gridImage src=' + student.get('image') + ' </image></div>' +'<h2>'+ student.get('name') + '</h2>          <h2>' + student.get('email') + '</h2><h2>' + student.get('phone') + '</h2>' + '<button class="delete">Delete</button>'%>
+            <%=  '<div class="gridImageContainer"><image class= gridImage src=' + student.get('image') + ' </image></div>' +'<h2>'+ student.get('name') + '</h2>          <h2>' + student.get('email') + '</h2><h2>' + student.get('phone') + '</h2>' + '<button class="delete">Delete</button><button class="edit">Edit</button>'%>
     
             
         </script> 

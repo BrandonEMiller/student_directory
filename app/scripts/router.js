@@ -19,8 +19,8 @@ StudentRouter = Backbone.Router.extend({
 
 	showThumbnails: function() {
 		$('.container').html('')
-		this.students = new ThumbnailCollection()
-		this.students.add( data )
+		this.thumbnails = new ThumbnailCollection()
+		this.thumbnails.add( data )
 	}
 })
 
