@@ -11,6 +11,7 @@ StudentRouter = Backbone.Router.extend({
 
 	routes: {
 		"students"		: "showStudents",
+		"students/:id"	: "showStudent",
 		"thumbnails"	: "showThumbnails"
 	},
 
@@ -24,6 +25,7 @@ StudentRouter = Backbone.Router.extend({
 		})
 	},
 
+
 	showThumbnails: function() {
 		$('.container').html('')
 		var that = this
@@ -31,7 +33,16 @@ StudentRouter = Backbone.Router.extend({
 		 $.get('http://0.0.0.0:3000/collections/students', function(data){
 			that.thumbnails.add(data)
 		})
-	}
+	},	 
+
+	showStudent: function(id) {
+		
+		$('.container').html('')
+		
+		var studentToShow = this.thumbnails.get(id)
+		new FullStudentView({model: studentToShow})
+	}	 
+	
 })
 
 var router = new StudentRouter() 

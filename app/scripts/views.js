@@ -62,3 +62,19 @@ ThumbnailView = Backbone.View.extend({
 		this.$el.append(this.template({student: this.model}))
 	}
 })
+
+
+FullStudentView = Backbone.View.extend({
+	template: _.template( $('#full-template').text()),
+
+
+	initialize: function() {
+		$('.container').append(this.el)
+		this.render()
+	},
+
+	render: function(){
+		this.$el.append(this.template({student: this.model}))
+	}
+
+})

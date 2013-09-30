@@ -39,8 +39,12 @@
         </script> 
 
         <script type="text/template" id="thumbnail-template">
-            <%='<div class="thumbnail-container"> <image class= thumbnailImage src=' + student.get('image') + ' </image>' +'<p>'+ student.get('name') + '</p></div>'%>
+            <%='<div class="thumbnail-container"> <image class= thumbnailImage src=' + student.get('image') + ' </image>' +'<a href=#/students/' + student.get('id') +'>'+ student.get('name') + '</a></div>'%>
         </script>  
+
+          <script type="text/template" id="full-template">
+            <%='<div class="student-container"> <image class= studentImage src=' + student.get('image') + ' </image><div class="student-text"><h2>'+ student.get('name') + '</h2><a href=https://github.com/' + student.get('github') +'>GitHub Page</a><h2>'+ student.get('email') + '</h2><h2>'+ student.get('phone') + '</h2></div></div>'%>
+        </script> 
         <!-- build:js scripts/vendor.js -->
         <!-- bower:js -->
         <script src="bower_components/jquery/jquery.js"></script>
