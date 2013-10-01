@@ -56,7 +56,7 @@ background-repeat: no-repeat;
     margin-right: 10px;
 }
 
-.thumbnail-container p {
+.thumbnail-container a {
     text-align: center;
 }
 

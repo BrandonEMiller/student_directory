@@ -48,6 +48,38 @@ GridStudentView = Backbone.View.extend({
 	}
 })
 
+AddView = Backbone.View.extend({
+
+
+	events: {
+		"click .add": "add"
+
+	},
+
+	initialize: function() {
+		$('.container').append(this.el)
+		this.render()
+	},
+
+	render: function() {
+		this.$el.append('<input class="input_name" placeholder="Name"/><input class="input_email" placeholder="Email"/><input class="input_phone" placeholder="Phone Number"/> <button class="add">Save</button>')
+	},
+
+	add: function() {
+		var name =  $('.input_name').val()
+		var email = $('.input_email').val()
+		var phone = $('.input_phone').val()
+		var data = [{
+			name: name,
+			email: email,
+			phone: phone,
+			image: 'https://identicons.github.com/9745e271f4fb0ac83b37286d6ac03942.png'
+		}]
+		this.students.add(data)
+		$.post('http://0.0.0.0:3000/collections/students', data)
+	}
+})
+
 ThumbnailView = Backbone.View.extend({
 	
 	template: _.template( $('#thumbnail-template').text() ),

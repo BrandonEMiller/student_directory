@@ -23,6 +23,7 @@ StudentRouter = Backbone.Router.extend({
 		 $.get('http://0.0.0.0:3000/collections/students', function(data){
 			that.students.add(data)
 		})
+		 //new AddView ()
 	},
 
 
