@@ -69,14 +69,15 @@ AddView = Backbone.View.extend({
 		var name =  $('.input_name').val()
 		var email = $('.input_email').val()
 		var phone = $('.input_phone').val()
-		var data = [{
+		var data = {
 			name: name,
 			email: email,
 			phone: phone,
 			image: 'https://identicons.github.com/9745e271f4fb0ac83b37286d6ac03942.png'
-		}]
-		this.students.add(data)
-		$.post('http://0.0.0.0:3000/collections/students', data)
+		}
+		console.log(data)
+		//this.students.add(data)
+		$.post('http://0.0.0.0:3000/collections/students', {name: data.name, email: data.email, phone: data.phone, image: data.image})
 	}
 })
 
