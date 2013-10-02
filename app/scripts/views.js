@@ -75,7 +75,8 @@ AddView = Backbone.View.extend({
 			name: name,
 			email: email,
 			phone: phone,
-			image: 'https://identicons.github.com/9745e271f4fb0ac83b37286d6ac03942.png'
+			image: 'https://identicons.github.com/9745e271f4fb0ac83b37286d6ac03942.png',
+			github: ''
 		}
 		console.log(data)
 		addStudent = new Student()
@@ -83,6 +84,7 @@ AddView = Backbone.View.extend({
 		console.log(addStudent)
 		students= new StudentCollection()
 		students.add(addStudent)
+		new GridStudentView({model: addStudent})
 		addStudent.save()
 		
 		//$.post('http://0.0.0.0:3000/collections/students', {name: data.name, email: data.email, phone: data.phone, image: data.image})
