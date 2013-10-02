@@ -27,7 +27,7 @@ GridStudentView = Backbone.View.extend({
 		this.model.destroy()
 		this.remove()
 		
-		//$.ajax({type:'DELETE', url:'http://0.0.0.0:3000/collections/students/'+ this.model.get('_id')})
+		
 	},
 
 	edit: function() {
@@ -87,7 +87,6 @@ AddView = Backbone.View.extend({
 		new GridStudentView({model: addStudent})
 		addStudent.save()
 		
-		//$.post('http://0.0.0.0:3000/collections/students', {name: data.name, email: data.email, phone: data.phone, image: data.image})
 	}
 })
 

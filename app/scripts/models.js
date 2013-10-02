@@ -1,23 +1,9 @@
 Student = Backbone.Model.extend({
-	initialize: function(){
-
-	},
-
 	idAttribute: "_id"  
-	//This is only if you wanted to use the underscore id as the id, I did not wish to do this because I am supplying an id for each bit of data
-	//Would also need to change the places where id is used to _id in models, views, and templates to make this all work
 })
 
 StudentCollection = Backbone.Collection.extend({
 	model: Student, 
-
-	initialize: function() {
-
-		// this.on('add', function (student){
-		// 	new GridStudentView( {model: student} )
-			
-		// })
-	},
 
 	url: 'http://0.0.0.0:3000/collections/students'
 })
