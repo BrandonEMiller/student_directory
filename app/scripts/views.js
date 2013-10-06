@@ -18,8 +18,6 @@ GridStudentView = Backbone.View.extend({
 	},
 
 	render: function(){
-
-		
 		this.$el.append(this.template({student: this.model}))
 	},
 
@@ -61,24 +59,23 @@ AddView = Backbone.View.extend({
 	},
 
 	render: function() {
-		this.$el.append('<input class="input_new_name" placeholder="Name"/><input class="input_new_email" placeholder="Email"/><input class="input_new_phone" placeholder="Phone Number"/> <button class="add">Save</button>')
+		this.$el.append('<input class="input_new_photo" placeholder="Photo URL"/><input class="input_new_name" placeholder="Name"/><input class="input_new_email" placeholder="Email"/><input class="input_new_phone" placeholder="Phone Number"/> <button class="add">Save</button>')
 	},
 
 	add: function() {
 		var name =  $('.input_new_name').val()
 		var email = $('.input_new_email').val()
 		var phone = $('.input_new_phone').val()
+		var image = $('.input_new_photo').val()
 		var data = {
 			name: name,
 			email: email,
 			phone: phone,
-			image: 'https://identicons.github.com/9745e271f4fb0ac83b37286d6ac03942.png',
+			image: image,
 			github: ''
 		}
-		console.log(data)
 		addStudent = new Student()
 		addStudent.set(data)
-		console.log(addStudent)
 		students= new StudentCollection()
 		students.add(addStudent)
 		new GridStudentView({model: addStudent})

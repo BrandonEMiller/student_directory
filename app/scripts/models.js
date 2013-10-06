@@ -8,17 +8,17 @@ StudentCollection = Backbone.Collection.extend({
 	url: 'http://0.0.0.0:3000/collections/students'
 })
 
-ThumbnailCollection = Backbone.Collection.extend({
-	model: Student, 
+// ThumbnailCollection = Backbone.Collection.extend({
+// 	model: Student, 
 
-	initialize: function() {
+// 	initialize: function() {
 
-		this.on('add', function (student){
-			new ThumbnailView( {model: student} )
+// 		this.on('add', function (student){
+// 			new ThumbnailView( {model: student} )
 			
-		})
-	}
-})
+// 		})
+// 	}
+// })
 
 // var data = [
 // 	{
