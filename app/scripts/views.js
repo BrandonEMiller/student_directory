@@ -3,9 +3,7 @@ GridStudentView = Backbone.View.extend({
 	template: _.template(  $('#grid-template').text() ),
 
 	events: {
-		"click .delete": "destroy",
-		"click .edit": "edit",
-		"click .save": "save"
+		"click .delete": "destroy"
 
 	},
 
@@ -28,21 +26,6 @@ GridStudentView = Backbone.View.extend({
 		
 	},
 
-	edit: function() {
-		$(this.el).html('<input class="input_name" value="' + this.model.get('name') + '"/><input class="input_email" value="' + this.model.get('email') + '"/><input class="input_phone" value="' + this.model.get('phone') + '"/> <button class="save">Save</button>')
-		
-
-	},
-
-	save: function() {
-		
-		this.model.set("name", $('.input_name').val())
-		this.model.set("email", $('.input_email').val())
-		this.model.set("phone", $('.input_phone').val())
-		var saveStudent = this.model
-		$(this.el).html('<div class="gridImageContainer"><image class= gridImage src=' + this.model.get('image') + ' </image></div>' +'<h2>'+ this.model.get('name') + '</h2><h2>' + this.model.get('email') + '</h2><h2>' + this.model.get('phone') + '</h2>' + '<button class="delete">Delete</button><button class="edit">Edit</button>')
-		this.model.save()
-	}
 })
 
 AddView = Backbone.View.extend({
@@ -103,6 +86,12 @@ ThumbnailView = Backbone.View.extend({
 FullStudentView = Backbone.View.extend({
 	template: _.template( $('#full-template').text()),
 
+	events: {
+		"click .edit": "edit",
+		"click .save": "save"
+
+	},
+
 
 	initialize: function() {
 		$('.container').append(this.el)
@@ -111,6 +100,23 @@ FullStudentView = Backbone.View.extend({
 
 	render: function(){
 		this.$el.append(this.template({student: this.model}))
+	},
+
+	edit: function() {
+		$(this.el).html('<input class="input_photo" value="' + this.model.get('image') +'"/><input class="input_name" value="' + this.model.get('name') + '"/><input class="input_email" value="' + this.model.get('email') + '"/><input class="input_phone" value="' + this.model.get('phone') + '"/> <button class="save">Save</button>')
+		
+
+	},
+
+	save: function() {
+		
+		this.model.set("name", $('.input_name').val())
+		this.model.set("email", $('.input_email').val())
+		this.model.set("phone", $('.input_phone').val())
+		this.model.set("image", $('.input_photo').val())
+		var saveStudent = this.model
+		this.render()
+		this.model.save()
 	}
 
 })
